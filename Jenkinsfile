@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t oshadapramod/mydevops:${BUILD_NUMBER} .'
+                sh "docker build -t oshadapramod/mydevopsproject:${BUILD_NUMBER} ."
             }
         }
         stage('Login to Docker Hub') {
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                sh "docker push oshadapramod/mydevops:${BUILD_NUMBER}"
+                sh "docker push oshadapramod/mydevopsproject:${BUILD_NUMBER}"
             }
         }
     }
